@@ -1197,7 +1197,7 @@ public class MongoCloudConnector
      * @throws IOException in case something goes wrong when disconnecting.
      */
     @Disconnect
-    public void disconnect() throws IOException
+    public void disconnect() throws RuntimeException
     {
         if (client != null)
         {
