@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.mongodb.*;
+
 import org.apache.commons.lang.Validate;
 import org.bson.types.BasicBSONList;
 import org.mule.api.ConnectionException;
@@ -1131,8 +1132,10 @@ public class MongoCloudConnector
         try
         {
             mongo = new com.mongodb.MongoClient(getMongoClientURI(username, password, database));
-            
             this.client = new MongoClientImpl(getDatabase(mongo, username, password, database));
+            
+            DB db = mongo.getDB(database);
+            db.getStats();
         }
         catch (final MongoException me)
         {
