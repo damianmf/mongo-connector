@@ -8,35 +8,11 @@
 
 package org.mule.module.mongo;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Scanner;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.DataPoint;
-import org.junit.experimental.theories.Theories;
-import org.junit.experimental.theories.Theory;
-import org.junit.runner.RunWith;
 import org.mule.api.ConnectionException;
-import org.mule.api.lifecycle.InitialisationException;
-import org.mule.module.mongo.api.IndexOrder;
-import org.mule.module.mongo.api.MongoClient;
-import org.mule.module.mongo.api.WriteConcern;
-
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.MongoException;
 
 
 public class MongoTestConnection
@@ -53,7 +29,7 @@ public class MongoTestConnection
     @Test
     public void connectionIncorrectPort() throws ConnectionException
     {
-    	connector.setPort(27018);
+    	connector.setPort(32589);
         assertTrue(!isConnected("admin","","test"));
     }
     
